@@ -1,0 +1,43 @@
+Here is an explanation for all of the current web services routes that you will need to be using and where to use them.
+
+/api/Authentication/Logout:
+This route is used to log the user out of the cms. It does nothing more than simply delete the cookie. You do not need to call this route unless you want to. You could always just delete the cookie in your code. 
+
+/api/Authentication/Login
+This route is used to log in the user. When successful it adds a cookie to the response. This cookie identifies the user on all following requests. 
+
+/api/Authentication/Register
+This registers a user. It also sets a cookie.
+
+/api/Authentication/Revalidate
+This request just returns the updated information of the currently logged in user. It returns the same data as the register and the login. This should be used whenever you want new user information. An example would be
+when your app has been closed for a few days and you want the new information about the user. You can call revalidate with the cookie that you have saved and it will give you the new information. (The cookie expiration time will be set to 30 days once we get ready for production.)
+
+/api/Reservation/Hotel
+This gets a particular hotel by its Id. It may be useful in situations where you want current information on a particular hotel
+
+/api/Reservation/Hotel/ByLocation/InRadius
+This gets all of the hotels in a particular radius. This is going to be used on the main screen to get the list of hotels in the city the user has specified, or based on the users current location (need to add button to get the GPS coordinates of the user.) You pass in a distance in kilometers and it will find all hotels within that distance.
+
+/api/Venue/ByHotelId
+This gets all of the venues for a particular hotel. Venues are things like pools, oceans, lakes, etc. This will be the next dropdown underneath the hotel selector. Once the user has selected a hotel, you can call this route and get all of the venues associated with the selected hotel.
+
+/api/Venue/GetBlackoutForVenue
+This returns all of the times that the venue is unavailable for reservation between a certain time. You can call this on the date selectors. Once the user has selected a city, hotel, and venue, the user can select a date. You can call this route to check if this date is available. If the list returns empty, there are no unavailable days. If the list returns back with an item that encapsulates the date, then that date is taken. 
+
+/api/VenueItems/ByVenueId
+This returns all of the items available for reservation inside of a venue. Once the user has selected a city, hotel, venue, and date, you call this route with the venue id and it will return all of the items that the user can purchase. It will evenutally include the item name, the item icon url and the item price.
+
+**New Routes**
+
+/api/Authentication/ForgotPassword
+This route is used to send a forgot password email to the user. When you call this route, pass in the email address of the user and it will send the user an email with instructions on how to reset their password. 
+
+/api/Authentication/RegisterExternal
+This is used to setup a new user to sign in with facebook. It requires the user to sign in with facebook, then you will have to collect the remaining user information such as email, name, etc. When you pass the object, you will need to pass the users information along with "Facebook" as the provider and the user token given by the Facebook SDK into this method. It will automatically sign you in if successful and return all of the information that the regular register provided.
+
+/api/Authentication/ObtainLocalAccessToken
+This is used to sign in a person that is already registered with us using facebook. The user will click the facebook button, you will then pass "Facebook" as the provider and the user token from facebook to this route. It will then find the user that is registered with this information and log them in, returning the same information that the regular login method does. You could also use this route to check if a user exists, and kick them to the register screen if it fails. 
+
+
+The routes in this list are all that are created currently. Routes for reservation and other things are not yet added and will be added in the coming days. 

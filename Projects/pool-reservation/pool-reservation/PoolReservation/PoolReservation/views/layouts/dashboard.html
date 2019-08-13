@@ -1,0 +1,79 @@
+<div ng-controller="DashboardCtrl">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="navbar shadow">
+            <!-- Hamburger -->
+            <button class="c-hamburger c-hamburger--htla is-active" ng-click="extend()">
+                <span>toggle menu</span>
+            </button>
+            <div class="responsive-logo">
+                Just <br><span class="smaller">Mosey</span>
+            </div>
+            <!-- Left aligned menu below button -->
+            <nav class="right" style="margin-right: 20px; margin-top: 10px;">
+                <md-menu md-position-mode="target-right target">
+                    <md-button aria-label="Open demo menu" class="nav-btn" ng-click="$mdOpenMenu($event)">
+                        <i class="mdi mdi-dots-vertical"></i>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item>
+                            <md-button ui-sref="logout" style="display:flex;">Logout</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>Disabled Action</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>Yet Another Action</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </nav>
+
+        </header>
+        <!-- Side bar here -->
+        <aside id="" class="sidebar">
+            <div class="top-logo">
+                JM
+            </div>
+            <div class="top-logo-extended">
+                Just <br /> <span class="smaller">Mosey</span>
+            </div>
+            <div class="scrollbar" id="scroll">
+                <div class="user-info">
+                    <div class="opacity">
+                        <a ui-sref="profile"><img ng-src="{{PictureOfUser}}" alt="" class="sidebar-profile"></a>
+                        <div class="info">
+                            {{NameOfUser || "Not logged in"}}
+                            <div class="pen">
+                                <a href="javascript:void(0)" class=""><i class="mdi mdi-border-color"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-menu">
+                    <ul class="menu-list">
+                        <!--<li class="show-subnav">
+                            <md-button href="" class="show-menu" ng-click="subnav('ui')">
+                                <i class="mdi mdi-chevron-down" ng-class="{'active': showingSubNav=='ui'}"></i>
+                                <i class="mdi mdi-arrange-bring-to-front"></i> &nbsp;
+                                <span class="text"> {{ 'elements' | translate }}</span>
+                            </md-button>
+                            <ul class="sub-menu" ng-class="{'visible': showingSubNav=='ui'}">
+                                <li ng-class="{active: $state.includes('button')}"><md-button ui-sref="button" class=""><span class="text">{{ 'buttons' | translate }}</span></md-button></li>
+                                <li ng-class="{active: $state.includes('card')}"><md-button ui-sref="card" class=""><span class="text">{{ 'cards' | translate }}</span></md-button></li>
+                                <li ng-class="{active: $state.includes('components')}"><md-button ui-sref="components" class=""><span class="text">{{ 'components' | translate }}</span></md-button></li>
+                            </ul>
+                        </li>-->
+                        <li ng-class="{active: $state.includes('managehotels')}"><md-button ui-sref="managehotels" class=""><i class="mdi mdi-worker"></i> &nbsp;<span class="text"> {{ 'Management'}}</span></md-button></li>
+                        <li><md-button ui-sref="logout" class=""><i class="mdi mdi-logout"></i> &nbsp;<span class="text">{{ 'Logout' }}</span></md-button></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <main class="content-holder">
+            <div class="page-content remodal-bg animsition" ng-class="{expandedContainer: $state.includes('profile')}">
+                <!-- Your content goes here -->
+                <div ui-view></div>
+            </div>
+        </main>
+    </div>
+</div>

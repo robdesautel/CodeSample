@@ -1,0 +1,41 @@
+﻿<div class="panel-heading">
+    <h3>Manage Items in {{theOptions.VenueName || "Venue"}} <span class="pull-right"><button ng-click="AddItem()" class="btn btn-primary">Add Item</button></span></h3>
+</div>
+<div class="panel-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Item Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Edit
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-class="item.IsHidden ? 'danger' : '' " ng-repeat="item in ItemsForList track by item.Id">
+                <td>
+                    {{item.Id}}
+                </td>
+                <td>
+                    {{item.Name}}
+                </td>
+                <td>
+                    {{item.Price | currency:"$"}}
+                </td>
+                <td>
+                    <a ng-click="ShowItemDetails(item)">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <h4 ng-show="ItemsForList == null || ItemsForList.length == 0">No items...</h4>
+</div>

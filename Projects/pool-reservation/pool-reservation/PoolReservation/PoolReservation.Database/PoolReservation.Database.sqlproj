@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>PoolReservation.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{95f4700a-441f-4926-ab81-164bd4cebff8}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>PoolReservation.Database</RootNamespace>
+    <AssemblyName>PoolReservation.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="SchemaCompares" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="HangFire" />
+    <Folder Include="HangFire\Tables" />
+    <Folder Include="dbo\Stored Procedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Venues.sql" />
+    <Build Include="dbo\Tables\ItemTypes.sql" />
+    <Build Include="dbo\Tables\Hotels.sql" />
+    <Build Include="dbo\Tables\AspNetUsers.sql" />
+    <Build Include="dbo\Tables\AspNetUserRoles.sql" />
+    <Build Include="dbo\Tables\AspNetUserLogins.sql" />
+    <Build Include="dbo\Tables\AspNetUserClaims.sql" />
+    <Build Include="dbo\Tables\AspNetRoles.sql" />
+    <Build Include="dbo\Tables\__MigrationHistory.sql" />
+    <Build Include="dbo\Tables\SitePermissions.sql" />
+    <Build Include="dbo\Tables\Permissions.sql" />
+    <Build Include="dbo\Tables\VenueTypes.sql" />
+    <Build Include="dbo\Tables\VenueItems.sql" />
+    <Build Include="dbo\Tables\ReserveItem.sql" />
+    <Build Include="dbo\Tables\HotelUsers.sql" />
+    <Build Include="dbo\Tables\HotelPermissions.sql" />
+    <Build Include="dbo\Tables\Calendar.sql" />
+    <Build Include="dbo\Tables\ReservationGroup.sql" />
+    <Build Include="dbo\Tables\ReservationTransaction.sql" />
+    <Build Include="dbo\Tables\TransactionType.sql" />
+    <Build Include="dbo\Tables\TransactionsForReservations.sql" />
+    <Build Include="dbo\Functions\CheckItemInHotel.sql" />
+    <Build Include="dbo\Functions\GetHotelIdForReservationItem.sql" />
+    <Build Include="Security\HangFire.sql" />
+    <Build Include="dbo\Tables\Pictures.sql" />
+    <Build Include="dbo\Tables\PictureUrls.sql" />
+    <Build Include="dbo\Tables\PictureResolutions.sql" />
+    <Build Include="dbo\Tables\TransactionPaymentDetails.sql" />
+    <Build Include="dbo\Tables\TransactionStripeDetails.sql" />
+    <Build Include="dbo\Functions\GetVenueTypeFromItemType.sql" />
+    <Build Include="dbo\Functions\GetVenueTypeFromVenue.sql" />
+    <Build Include="dbo\Functions\GetQuantityForItemOnDay.sql" />
+    <Build Include="dbo\Functions\GetDateOfReservation.sql" />
+    <Build Include="dbo\Tables\MiscellaneousHtmlTable.sql" />
+    <Build Include="dbo\Tables\TermsAndConditions.sql" />
+    <Build Include="dbo\Tables\HotelMiscellaneousTable.sql" />
+    <Build Include="dbo\Tables\VenueItemQuantity.sql" />
+    <Build Include="HangFire\Tables\AggregatedCounter.sql" />
+    <Build Include="HangFire\Tables\Counter.sql" />
+    <Build Include="HangFire\Tables\Hash.sql" />
+    <Build Include="HangFire\Tables\Job.sql" />
+    <Build Include="HangFire\Tables\JobParameter.sql" />
+    <Build Include="HangFire\Tables\JobQueue.sql" />
+    <Build Include="HangFire\Tables\List.sql" />
+    <Build Include="HangFire\Tables\Schema.sql" />
+    <Build Include="HangFire\Tables\Server.sql" />
+    <Build Include="HangFire\Tables\Set.sql" />
+    <Build Include="HangFire\Tables\State.sql" />
+    <Build Include="dbo\Views\VenueItemWithQuantity.sql" />
+    <Build Include="dbo\Stored Procedures\PrepareAndGetReservationForProcessing.sql" />
+    <Build Include="dbo\Stored Procedures\DeletePendingReservation.sql" />
+    <Build Include="dbo\Stored Procedures\CancelProcessing.sql" />
+    <Build Include="dbo\Tables\TransactionStatus.sql" />
+    <Build Include="dbo\Tables\ReservationGroupStatus.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateStatusDate.sql" />
+    <Build Include="dbo\Stored Procedures\ChangeProcessingStatusToPending.sql" />
+    <Build Include="dbo\Tables\PrivacyPolicy.sql" />
+    <Build Include="dbo\Tables\InboxMessages.sql" />
+    <Build Include="dbo\Views\ReservationGroupWithStatistics.sql" />
+    <Build Include="dbo\Tables\Icons.sql" />
+    <Build Include="dbo\Tables\TableRow.sql" />
+    <Build Include="dbo\Tables\TableContainer.sql" />
+    <Build Include="dbo\Tables\QueueMessage.sql" />
+    <Build Include="dbo\Tables\QueueContainer.sql" />
+    <Build Include="dbo\Tables\Page.sql" />
+    <Build Include="dbo\Tables\DeletedAccount.sql" />
+    <Build Include="dbo\Tables\CurrentPage.sql" />
+    <Build Include="dbo\Tables\CommittedBlock.sql" />
+    <Build Include="dbo\Tables\BlockData.sql" />
+    <Build Include="dbo\Tables\BlobContainer.sql" />
+    <Build Include="dbo\Tables\Blob.sql" />
+    <Build Include="dbo\Tables\Account.sql" />
+    <Build Include="dbo\Functions\ReplaceStringOnlyIfNotNullOrEmpty.sql" />
+    <Build Include="dbo\Functions\MatchingDelimiter.sql" />
+    <Build Include="dbo\Functions\EscapedLikeString.sql" />
+    <Build Include="dbo\Functions\GetSummaryQueueContainers.sql" />
+    <Build Include="dbo\Functions\GetSummaryBlobs.sql" />
+    <Build Include="dbo\Functions\GetSummaryBlobContainers.sql" />
+    <Build Include="dbo\Stored Procedures\SnapshotPageBlob.sql" />
+    <Build Include="dbo\Stored Procedures\SnapshotBlockBlob.sql" />
+    <Build Include="dbo\Stored Procedures\InsertPageHelper.sql" />
+    <Build Include="dbo\Stored Procedures\InsertPage.sql" />
+    <Build Include="dbo\Stored Procedures\InsertCurrentPage.sql" />
+    <Build Include="dbo\Stored Procedures\DequeueMessages.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteSnapshots.sql" />
+    <Build Include="dbo\Stored Procedures\DeletePage.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteCurrentPage.sql" />
+    <Build Include="dbo\Stored Procedures\CopyPageBlob.sql" />
+    <Build Include="dbo\Stored Procedures\CopyBlockBlob.sql" />
+    <Build Include="dbo\Stored Procedures\CommitBlockList.sql" />
+    <Build Include="dbo\Stored Procedures\ClearUncommittedBlocks.sql" />
+    <Build Include="dbo\Stored Procedures\ClearQueue.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SchemaCompares\JonahSchemaCompare.scmp" />
+    <None Include="SchemaCompares\RobertSqlSchemaCompare1.scmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="PoolReservation.Database.refactorlog" />
+  </ItemGroup>
+</Project>

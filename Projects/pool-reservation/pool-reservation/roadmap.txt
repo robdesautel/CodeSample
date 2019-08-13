@@ -1,0 +1,60 @@
+Roadmap To Completion of the Pool Reserve Project (+) added (+o) need test
+		12/8->12/10:
+		-Jonah:
+			Finish all routes needed for the mobile app, excluding facebook login. (+)
+		-Robert:
+			Finish 2 routes in email (+)
+			Create Registration (+)
+
+			Create RevalidateLogin (+)
+	}  (+)
+
+	12/12 -> 12/16
+		-Jonah:
+			Add all super-manager functionality
+				Create hotel (+)
+				Assign first admin to hotel(+)
+				**Anonymous Checkout
+				Set prices (+)
+				Add/Remove venue types (+)
+				Add/Remove item types (+)
+				Edit permissions of users (+)
+			Add ability to send emails (+)
+			Add Hangfire (+)
+			Setup maitenance tasks 
+			Add Quantity restrictions to ensure data integrity
+			Add Stripe Integration
+		-Robert:
+			Create routes for CMS (+)
+			Implement some CMS features online if comfortable (+)
+	12/19 -> 12/23
+		-Jonah:
+				
+			Add all hotel functionality
+				Add new managers to account(+)
+				View all reservations
+				Add blackout dates (+)
+				Add/Remove venues (+)
+				Add/Remove items(?)
+				Change quantities. (?)
+				Edit permissions of people underneath you. (?)
+			Implement Facebook (+o)
+			Implement Daily reports
+		-Robert:
+			Help with above.
+	12/26 -> 12/30
+		-Jonah:
+			Add terms and conditions (+)
+			Finish uncompleted work from above.
+			Begin testing application.
+		-Robert:
+			Help with above.
+	1/2 -> 1/4
+		-Jonah:
+			Testing
+			Last minute changes.
+		-Robert:
+			Help with above.
+	1/5 ->
+		Release
+			

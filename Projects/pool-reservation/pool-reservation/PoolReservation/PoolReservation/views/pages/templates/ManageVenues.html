@@ -1,0 +1,47 @@
+﻿<div class="panel-heading">
+    <h3>Manage Venues in {{theOptions.HotelName || "Hotel"}} <span class="pull-right"><button ng-click="AddVenue()" class="btn btn-primary">Add Venue</button></span></h3>
+</div>
+<div class="panel-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Venue Name
+                </th>
+                <th>
+                    Venue Type
+                </th>
+                <th>
+                    Manage
+                </th>
+                <th>
+                    Special Message
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-class="venue.IsHidden ? 'danger' : '' " ng-repeat="venue in VenuesForList track by venue.Id">
+                <td>
+                    {{venue.Id}}
+                </td>
+                <td>
+                    {{venue.Name}}
+                </td>
+                <td>
+                    {{venue.Type.Name}}
+                </td>
+                <td>
+                    <a ng-click="ShowManageVenue(venue)">Manage</a>
+                </td>
+                <td>
+                    <a ng-click="ShowSpecialMessage(venue, $event)">Special Message</a>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <h4 ng-show="VenuesForList == null || VenuesForList.length == 0">No venues...</h4>
+</div>

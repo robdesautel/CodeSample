@@ -1,0 +1,53 @@
+<div ng-controller="HotelController">
+    <div class="addhotel-overlay">
+        <div class="logo">
+        </div>
+        <div class="form-container">
+            <div class="icon">
+                <div class="header">
+                    ADD YOUR HOTEL HERE
+                </div>
+            </div>
+            <div class="inputs">
+                <form style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="hotel.name" type="text" placeholder="Hotel name">
+                        </md-input-container>
+                    </div>
+                </form>
+                <form style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="hotel.address" type="text" placeholder="Hotel address">
+                        </md-input-container>
+                    </div>
+                </form>
+                <form style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="hotel.taxRate" type="text" placeholder="Hotel tax (e.g. 7.5 = 7.5%)" pattern="^([1-9]{1,2}){1}(\.[0-9]{1,2})?$">
+                        </md-input-container>
+                    </div>
+                </form>
+                <div class="buttons">
+                    <div class="link">
+                        <div class="link" style="padding-bottom:0;">
+                            <md-button class="md-raised primary" ng-click="Hotel()"> Create </md-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="login-footer">
+            <div class="left-section">
+                &copy; Material Dashboard Theme
+            </div>
+
+            <div class="right-section">
+                Terms and Conditions Apply
+            </div>
+        </footer>
+    </div>
+</div>
+

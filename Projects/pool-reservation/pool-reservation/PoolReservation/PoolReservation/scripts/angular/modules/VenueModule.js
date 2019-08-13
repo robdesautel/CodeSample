@@ -1,0 +1,1 @@
+﻿angular.module("PoolReserve.Venue", ["PoolReserve.Item", "ngSanitize"]);

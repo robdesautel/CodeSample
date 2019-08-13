@@ -1,0 +1,61 @@
+<div ng-controller="VenueController">
+    <div class="addvenue-overlay">
+        <div class="logo">
+        </div>
+        <div class="form-container">
+            <div class="icon">
+                <div class="header">
+                    ADD VENUE DETAILS
+                </div>
+            </div>
+            <div class="inputs">
+                <form style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="venue.name" type="text" placeholder="Venue Name" pattern="/^[a-zA-Z0-9]{20}$/">
+                        </md-input-container>
+
+                        <md-select placeholder="Venue Type" ng-model="SelectedVenueType" ng-change="LoadVenueItemTypes()">
+                            <md-option ng-repeat="venue in VenuesTypes track by venue.Id" value="{{$index}}">{{venue.Name}}</md-option>
+                        </md-select>
+                    </div>
+                </form>
+                <div ng-repeat="items in ItemsInVenue track by $index">
+                    <hr /><p>Venue Item</p>
+                    <form style="display: flex; justify-content: center;">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                            <md-input-container>
+                                <input ng-model="items.name" type="text" placeholder="Item Name" pattern="/^[a-zA-Z0-9]{20}$/">
+
+                            </md-input-container>
+                            <md-select placeholder="Item Type" ng-model="items.selectedVenueItem">
+                                <md-option ng-repeat="item in ItemTypes track by item.Id" value="{{$index}}">{{item.Name}}</md-option>
+                            </md-select>
+                        </div>
+                    </form>
+                </div>
+                Price: {{completeSelectedVenueItem.Price | currency: "$"}}
+                <div>
+                    <md-button class="primary-flat" ng-click="AddItemsToList()">Add Venue Type</md-button>
+                </div>
+                <div class="buttons">
+                    <div class="link">
+                        <div class="link" style="padding-bottom:0;">
+                            <md-button class="md-raised primary" ng-click="Venue()"> Create </md-button>
+                        </div>
+                    </div>
+                </div>
+            </div>-
+        </div>
+        <footer class="login-footer">
+            <div class="left-section">
+                &copy; Material Dashboard Theme
+            </div>
+
+            <div class="right-section">
+                Terms and Conditions Apply
+            </div>
+        </footer>
+    </div>
+</div>
+

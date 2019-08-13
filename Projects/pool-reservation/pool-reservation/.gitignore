@@ -1,0 +1,11 @@
+bin/
+obj/
+/packages
+.vs/config/applicationhost.config
+
+
+PoolReservation/.vs/config/applicationhost.config
+PoolReservation/packages/
+PoolReservation/PoolReservation.Database/PoolReservation.Database.jfm
+PoolReservation/PoolReservation.Database/PoolReservation.Database.dbmdl
+PoolReservation/.vs/PoolReservation/v14/.suo

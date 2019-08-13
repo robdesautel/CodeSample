@@ -1,0 +1,11 @@
+﻿<div class="panel-heading">
+    <h3 ng-hide="IsAdd">Manage Blackout in {{theOptions.VenueName || "Venue"}} </h3>
+    <h3 ng-show="IsAdd">Add Blackout to {{theOptions.VenueName || "Venue"}} </h3>
+</div>
+<div class="panel-body">
+    Id: {{CurrentBlackout.Id || "New Blackout"}} <br />
+    Start Date: <input type="date" ng-change="Invalidate()" ng-model="CurrentBlackout.StartDate" /> <br />
+    End Date: <input type="date" ng-change="Invalidate()" ng-model="CurrentBlackout.EndDate" />
+    <span class="pull-right" ng-show="IsAdd"><button ng-click="theOptions.DeleteWidget()"  class="btn btn-danger">Cancel</button><button ng-click="AddBlackout()" ng-show="IsModified" class="btn btn-success">Save Changes</button></span>
+    <span class="pull-right" ng-hide="IsAdd"><button ng-click="DeleteBlackout()" class="btn btn-danger">Delete Blackout</button><button ng-click="CancelChanges()"  ng-show="IsModified" class="btn btn-primary">Cancel Changes</button><button ng-click="SaveEdits()"  ng-show="IsModified" class="btn btn-success">Save Changes</button></span>
+</div>

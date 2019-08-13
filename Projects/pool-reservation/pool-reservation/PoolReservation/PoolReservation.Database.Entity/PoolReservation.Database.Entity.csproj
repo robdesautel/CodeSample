@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2DBC05BB-CF7D-4443-881E-7B9F5E56DAB5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PoolReservation.Database.Entity</RootNamespace>
+    <AssemblyName>PoolReservation.Database.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AggregatedCounter.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetRoles.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaims.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogins.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUsers.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Counter.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__RefactorLog.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hash.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelMiscellaneousTable.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelPermissions.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hotels.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUsers.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Icons.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InboxMessages.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemTypes.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Job.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobParameter.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobQueue.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="List.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MiscellaneousHtmlTable.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AspNetUserRolesEnum.cs" />
+    <Compile Include="Model\Blackout.cs" />
+    <Compile Include="Model\Hotel\CreateHotels.cs" />
+    <Compile Include="Model\Hotel\Incoming\IncomingEditHotel.cs" />
+    <Compile Include="Model\ItemType\CreateItemType.cs" />
+    <Compile Include="Model\ItemType\Incoming\IncomingEditItemType.cs" />
+    <Compile Include="Model\Item\CreateItem.cs" />
+    <Compile Include="Model\Item\Incoming\IncomingEditItem.cs" />
+    <Compile Include="Model\LatLonLocation.cs" />
+    <Compile Include="Model\MiscellaneousHtmlTable\CreateMessage.cs" />
+    <Compile Include="Model\MiscellaneousHtmlTable\Incoming\IncomingSpecialMessage.cs" />
+    <Compile Include="Model\Permissions\Pictures\TemporaryPictureObject.cs" />
+    <Compile Include="Model\Permissions\HotelUsersPermissionsEnum.cs" />
+    <Compile Include="Model\Reservations\BeginReservation.cs" />
+    <Compile Include="Model\Reservations\BeginReservationItem.cs" />
+    <Compile Include="Model\Reservations\ReservationGroupStatusEnum.cs" />
+    <Compile Include="Model\Reservations\ReservationSearchTypeEnum.cs" />
+    <Compile Include="Model\Reservations\TransactionStatusEnum.cs" />
+    <Compile Include="Model\Reservations\TransactionTypeEnum.cs" />
+    <Compile Include="Model\VenueType\CreateVenueType.cs" />
+    <Compile Include="Model\VenueType\IncomingVenueType\IncomingEditVenueType.cs" />
+    <Compile Include="Model\Venue\CreateVenues.cs" />
+    <Compile Include="Model\Venue\Incoming\IncomingEditVenue.cs" />
+    <Compile Include="Permissions.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PictureResolutions.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pictures.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PictureUrls.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoolReservationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoolReservationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoolReservationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoolReservationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoolReservationModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PrepareAndGetReservationForProcessing_Result.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrivacyPolicy.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationGroup.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationGroupStatus.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationTransaction.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReserveItems.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schema.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Server.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Set.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SitePermissions.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="State.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TermsAndConditions.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionPaymentDetails.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionsForReservations.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionStatus.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionStripeDetails.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionType.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VenueItemQuantity.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VenueItems.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VenueItemWithQuantity.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Venues.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VenueTypes.cs">
+      <DependentUpon>PoolReservationModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="PoolReservationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PoolReservationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <Content Include="Model\Hotel\packages.config" />
+    <None Include="packages.config" />
+    <None Include="PoolReservationModel.edmx.diagram">
+      <DependentUpon>PoolReservationModel.edmx</DependentUpon>
+    </None>
+    <Content Include="Properties\Web.config" />
+    <None Include="Properties\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Properties\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PoolReservationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PoolReservationModel.Context.cs</LastGenOutput>
+      <DependentUpon>PoolReservationModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="PoolReservationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PoolReservationModel.edmx</DependentUpon>
+      <LastGenOutput>PoolReservationModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Partials\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PoolReservation.SharedObjects\PoolReservation.SharedObjects.csproj">
+      <Project>{0A49571C-A552-4834-98C8-891342D3AA1D}</Project>
+      <Name>PoolReservation.SharedObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

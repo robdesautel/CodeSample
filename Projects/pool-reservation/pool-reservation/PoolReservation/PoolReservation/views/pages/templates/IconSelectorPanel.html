@@ -1,0 +1,36 @@
+﻿
+<div style="width:400px; height: 425px;" class="panel panel-default">
+    <md-button ng-click="CloseWidget()" class="md-fab md-mini md-primary pull-right" aria-label="Exit current widget">
+        <i class="mdi mdi-close"></i>
+    </md-button>
+    <div class="panel-heading">
+        Select an Icon:
+    </div>
+    <div style="height:90%; width:100%; overflow-y:auto;" class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Icon
+                    </th>
+                    <th>
+                        
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="icon in IconsForList | orderBy:'-Id' track by icon.Id">
+
+                    <td>
+                        <img ng-if="icon.Picture.Resolutions[0]" ng-src="{{icon.Picture.Resolutions[0].BlobUrl}}" width="50" height="50" />
+                    </td>
+                    <td>
+                        <a ng-click="ChooseIcon(icon)">Select</a>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+

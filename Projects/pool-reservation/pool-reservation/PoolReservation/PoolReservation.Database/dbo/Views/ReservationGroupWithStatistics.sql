@@ -1,0 +1,13 @@
+﻿--CREATE VIEW [dbo].[ReservationGroupWithStatistics]
+--	AS SELECT rg.Id, rg.HotelId, hot.Name
+--	FROM [ReservationGroup] rg,
+--	[Hotels] hot,
+--	( 
+--		SELECT TOP 1 ri.DateReservedFor 
+--		FROM [ReserveItems] ri 
+--		WHERE ri.ReservationId = 
+--		AND ri.IsDeleted = 0
+--		ORDER BY ri.DateReservedFor desc
+--	) as StartDate
+--	WHERE rg.HotelId = hot.Id
+--	GROUP BY rg.Id

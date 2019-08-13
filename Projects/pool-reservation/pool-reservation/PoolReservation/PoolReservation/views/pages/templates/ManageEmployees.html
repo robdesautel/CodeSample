@@ -1,0 +1,64 @@
+﻿<div class="panel-heading">
+    <h3>Manage Users In {{theOptions.HotelName || "Hotel"}}</h3>
+</div>
+<div class="panel-body">
+    <form ng-submit="SearchUsers()" style="display: flex;">
+        <div class="row">
+            <div class="col-md-6">
+                    <span class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="userSearchString" type="text" placeholder="Search users...">
+                        </md-input-container>
+                    </span>
+            </div>
+            <div class="col-md-3">
+                <span class="link">
+                    <span class="link" style="padding-bottom:0;">
+                        <md-button ng-click="SearchUsers()" class="md-raised primary">Search</md-button>
+                    </span>
+                </span>
+            </div>
+            <div ng-show="LoggedInUsersPermissions.Users.Edit" class="col-md-2">
+                <span class="link" style="padding-bottom:0;">
+                    <md-button ng-click="ShowAddUser()" class="md-raised primary"><i class="mdi mdi-plus"></i> Add User</md-button>
+                </span>
+            </div>
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Position
+                </th>
+                <th>
+                    Details
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in UsersForList track by user.User.Id">
+                <td>
+                    {{user.User.Id}}
+                </td>
+                <td>
+                    {{user.User.FirstName + " " + user.User.LastName}}
+                </td>
+                <td>
+                    {{user.Permissions.Name}}
+                </td>
+                <td>
+                    <a ng-click="ShowDetails(user)">Details</a>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <h4 ng-show="UsersForList == null || UsersForList.length == 0">No users...</h4>
+</div>

@@ -1,0 +1,71 @@
+﻿<div class="panel-heading">
+    <h3 ng-show="IsAdd">Add Hotel</h3>
+    <h3 ng-hide="IsAdd">Manage {{CurrentHotel.Name || "Hotel"}}</h3>
+</div>
+<div class="panel-body">
+
+    <div class="form-horizontal">
+        <div ng-hide="IsAdd" class="form-group">
+            <label class="control-label col-sm-2">Id:</label>
+            <div class="col-sm-10">
+                {{CurrentHotel.Id}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Picture:</label>
+            <div class="col-sm-10">
+                <img ng-show="PictureUrl" height="64" ng-src="{{PictureUrl}}" alt="Profile Picture" class="sidebar-profile">
+                <label ng-show="theOptions.SitePermissions.Hotel.Edit" class="md-button md-raised md-primary">
+                    <input style="display:none;" type="file" single-file-upload on-change="ImageChanged">
+                    <span ng-show="PictureUrl">Change</span><span ng-hide="PictureUrl">Upload</span>
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Name:</label>
+            <div class="col-sm-10">
+                <span ng-show="!IsAdd && theOptions.SitePermissions.Hotel.Edit == false">{{CurrentHotel.Name}}</span><input class="form-control" maxlength="30" ng-show="IsAdd || theOptions.SitePermissions.Hotel.Edit" type="text" ng-change="Invalidate()" ng-model="CurrentHotel.Name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Is Hidden:</label>
+            <div class="col-sm-10">
+                <md-checkbox ng-disabled="!IsAdd && theOptions.SitePermissions.Hotel.Edit == false" ng-change="Invalidate()" ng-model="CurrentHotel.IsHidden" aria-label="Hotel Is Hidden">
+                </md-checkbox>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Address:</label>
+            <div class="col-sm-10">
+                <span ng-show="!IsAdd && theOptions.SitePermissions.Hotel.Edit == false">{{CurrentHotel.Address}}</span><input ng-show="IsAdd || theOptions.SitePermissions.Hotel.Edit" type="text" ng-blur='getLatLonLookup()' class="form-control" ng-model="CurrentHotel.Address" ng-change="InvalidateAddress()" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Latitude:</label>
+            <div class="col-sm-10">
+                {{AddressNeedsLatLon ? "Finish typing address field" : (CurrentHotel.Latitude | number:5) || "Please enter address"}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Longitude:</label>
+            <div class="col-sm-10">
+                {{AddressNeedsLatLon ? "Finish typing address field" : (CurrentHotel.Longitude | number:5) || "Please enter address"}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Tax Rate:</label>
+            <div class="col-sm-10">
+                <input class="form-control" ng-show="theOptions.SitePermissions.Hotel.Edit == true || IsAdd" ng-change="Invalidate()" ng-model="CurrentHotel.TaxRate" type="text" placeholder="Hotel tax (e.g. 7.5 = 7.5%)" pattern="^([0-9]{1,2}){1}(\.[0-9]{1,2})?$"> Value: {{CurrentHotel != null && CurrentHotel.TaxRate != null ? (CurrentHotel.TaxRate + "%") : "No value"}}
+            </div>
+        </div>
+    </div>   
+    <span class="pull-right" ng-show="IsAdd"><button ng-click="AddItem()" ng-show="IsModified" class="btn btn-success">Save Changes</button></span>
+    <span class="pull-right" ng-hide="IsAdd"><button ng-click="DeleteItem()" class="btn btn-danger">Delete</button><button ng-click="CancelChanges()" ng-show="IsModified" class="btn btn-primary">Cancel Changes</button><button ng-click="EditItem()" ng-show="IsModified" class="btn btn-success">Save Changes</button></span>
+    <br />
+    <br />
+    <div ng-show="!IsAdd" class="well well-sm">
+        <md-button ng-click="ShowVenues()" class="md-raised md-primary">Venues</md-button>
+        <md-button ng-click="ShowReservations()" class="md-raised md-primary">Reservations</md-button>
+        <md-button ng-click="ShowEmployees()" class="md-raised md-primary">Users</md-button>
+    </div>
+</div>

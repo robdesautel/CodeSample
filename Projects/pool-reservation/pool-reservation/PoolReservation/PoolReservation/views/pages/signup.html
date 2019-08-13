@@ -1,0 +1,89 @@
+<div ng-controller="RegistrationController">
+    <div class="login-overlay">
+        <div class="logo">
+            Just <br> <span class="smaller">Mosey</span>
+        </div>
+        <div class="form-container shadow">
+            <div class="icon">
+                <i ng-hide="PictureUrl" class="mdi mdi-account-circle"></i>
+                <img ng-show="PictureUrl" height="64" ng-src="{{PictureUrl}}" alt="Profile Picture" class="sidebar-profile">
+                <br />
+
+                <label class="md-button md-raised md-primary">
+                    <input style="display:none;" type="file" single-file-upload on-change="ImageChanged">
+                    Upload Profile Picture
+                </label>
+                <br />
+                <md-button ng-show="PictureUrl" ng-click="DeleteProfilePicture()" class="md-raised md-danger">Delete Picture</md-button>
+
+
+                <div class="header">
+                    Sign Up
+                </div>
+            </div>
+            <div class="inputs">
+                <form style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="user.firstname" type="text" placeholder="first name">
+                        </md-input-container>
+                    </div>
+                </form>
+                <form style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="user.lastname" type="text" placeholder="last name">
+                        </md-input-container>
+                    </div>
+                </form>
+                <form style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="user.mail" type="email" placeholder="email">
+                        </md-input-container>
+                    </div>
+                </form>
+                <form style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="user.password" type="password" placeholder="password">
+                        </md-input-container>
+                    </div>
+                </form>
+                <form style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="user.confirmpassword" type="password" placeholder="confirm password">
+                        </md-input-container>
+                    </div>
+                </form>
+                <form style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="user.phonenumber" type="text" placeholder="telephone">
+                        </md-input-container>
+                    </div>
+                </form>
+
+                <div class="buttons">
+
+                    <span class="signup">
+                        <a ui-sref="login">Login here</a>
+                    </span>
+                    <div class="link">
+                        <div class="link" style="padding-bottom:0;">
+                            <md-button class="md-raised primary" ng-click="Register()"> Signup </md-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="login-footer">
+            <div class="left-section">
+                &copy; JustMosey
+            </div>
+        </footer>
+    </div>
+</div>
+
+

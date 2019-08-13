@@ -1,0 +1,42 @@
+﻿<div class="panel-heading">
+    <h3 ng-show="IsAdd">Add Venue to {{theOptions.HotelName || "Hotel"}}</h3>
+    <h3 ng-hide="IsAdd">Manage Venue in {{theOptions.HotelName || "Hotel"}}</h3>
+</div>
+<div class="panel-body">
+    <div class="form-horizontal">
+        <div ng-hide="IsAdd" class="form-group">
+            <label class="control-label col-sm-2">Id:</label>
+            <div class="col-sm-10">
+                {{CurrentVenue.Id}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-change="Invalidate()" ng-model="CurrentVenue.Name" maxlength="30"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Is Hidden:</label>
+            <div class="col-sm-10">
+                <md-checkbox ng-model="CurrentVenue.IsHidden" ng-change="Invalidate()" aria-label="Venue Is Hidden">
+                </md-checkbox>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Type:</label>
+            <div class="col-sm-10">
+                <select ng-show="IsAdd" class="form-control" ng-options="venue.Name for venue in VenueTypeList track by venue.Id"
+                        ng-model="CurrentVenue.Type" ng-change="Invalidate()"></select> <span ng-hide="IsAdd">{{CurrentVenue.Type.Name}}</span>
+            </div>
+        </div>
+    </div>
+    <span class="pull-right" ng-show="IsAdd"><button ng-click="AddVenue()" ng-show="IsModified" class="btn btn-success">Save Changes</button></span>
+    <span class="pull-right" ng-hide="IsAdd"><button ng-click="DeleteVenue()" class="btn btn-danger">Delete</button><button ng-click="CancelChanges()" ng-show="IsModified" class="btn btn-primary">Cancel Changes</button><button ng-click="EditVenue()" ng-show="IsModified" class="btn btn-success">Save Changes</button></span>
+    <br />
+    <br />
+    <div ng-show="!IsAdd" class="well well-sm">
+        <md-button ng-click="ShowItems()" class="md-raised md-primary">Items</md-button>
+        <md-button ng-click="ShowBlackouts()" class="md-raised md-primary">Blackouts</md-button>
+    </div>
+</div>

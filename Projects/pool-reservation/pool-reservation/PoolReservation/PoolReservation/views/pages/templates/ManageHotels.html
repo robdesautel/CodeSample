@@ -1,0 +1,60 @@
+﻿<div class="panel-heading">
+    <h3>Manage Hotels</h3>
+</div>
+<div class="panel-body">
+    <form ng-submit="SearchHotels()" style="display: flex;">
+        <span class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+            <md-input-container>
+                <input ng-model="hotelSearchString" type="text" placeholder="Search hotels" >
+            </md-input-container>
+        </span>
+        <span class="link pull-right">
+            <span class="link" style="padding-bottom:0;">
+                <md-button ng-click="SearchHotels()" data-toggle="tooltip" title="Leave search blank and click for all hotels." class="md-raised primary"> Search </md-button>
+            </span>
+        </span>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Hotel Name
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Tax Rate
+                </th>
+                <th>
+                    Manage
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-class="hotel.IsHidden ? 'danger' : '' " ng-repeat="hotel in HotelsForList track by hotel.Id">
+                <td>
+                    {{hotel.Id}}
+                </td>
+                <td>
+                    {{hotel.Name}}
+                </td>
+                <td>
+                    {{hotel.Address}}
+                </td>
+                <td>
+                    {{hotel.TaxRate * 100}}%
+                </td>
+                <td>
+                    <a ng-click="ShowManageHotel(hotel)">Manage</a>
+                </td>
+
+            </tr>
+        </tbody>
+
+    </table>
+    <h4 ng-show="HotelsForList == null || HotelsForList.length == 0">No hotels...</h4>
+</div>

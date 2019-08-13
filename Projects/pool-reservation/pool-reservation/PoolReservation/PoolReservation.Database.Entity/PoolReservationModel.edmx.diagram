@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a4214dff6bcf4063af6da51f8da32c16" Name="Diagram1" ZoomLevel="18">
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.C__RefactorLog" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.AspNetRoles" Width="1.5" PointX="2.875" PointY="12.625" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.AspNetUserClaims" Width="1.5" PointX="7.5" PointY="17.875" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.AspNetUserLogins" Width="1.5" PointX="7.5" PointY="15.25" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.AspNetUsers" Width="1.5" PointX="5.25" PointY="12.125" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Calendar" Width="1.5" PointX="15.75" PointY="1.375" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Permissions" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.SitePermissions" Width="1.5" PointX="2.875" PointY="14.375" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.VenueTypes" Width="1.5" PointX="3.75" PointY="18.125" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_AspNetUsers_ToTable" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_SitePermissions_Hotel_To_Permissions" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_SitePermissions_Icon_To_Permissions" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_SitePermissions_OtherReservations_To_Permissions" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_SitePermissions_PersonalReservation_To_Permissions" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_SitePermissions_Price_To_Permissions" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.AspNetUserRoles" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.HotelUsers" Width="1.5" PointX="10.5" PointY="4" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_HotelUsers_To_AspUsers" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.ReservationTransaction" Width="1.5" PointX="10.5" PointY="13.375" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.TransactionsForReservations" Width="1.5" PointX="12.75" PointY="12.5" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.TransactionType" Width="1.5" PointX="8.25" PointY="21" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ReservationTransaction_To_UsersBy" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ReservationTransaction_To_UsersFor" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ReservationTransaction_To_Type" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_TransactionsForReservations_To_Transactions" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.ItemTypes" Width="1.5" PointX="6.375" PointY="5.25" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.AggregatedCounter" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Counter" Width="1.5" PointX="15.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Hash" Width="1.5" PointX="13.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Job" Width="1.5" PointX="13.75" PointY="6.25" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.JobParameter" Width="1.5" PointX="16" PointY="8.25" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.JobQueue" Width="1.5" PointX="15.75" PointY="14.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.List" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Schema" Width="1.5" PointX="10.75" PointY="17.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Server" Width="1.5" PointX="17.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Set" Width="1.5" PointX="17.75" PointY="14.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.State" Width="1.5" PointX="16" PointY="5.125" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ItemTypes_ToVenueType" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_HangFire_JobParameter_Job" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_HangFire_State_Job" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Hotels" Width="1.5" PointX="3.25" PointY="9.25" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.VenueItems" Width="1.5" PointX="8.125" PointY="0.5" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_HotelUsers_To_HotelId" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_VenueItems_To_Types" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.PictureResolutions" Width="1.5" PointX="9.75" PointY="23.625" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Pictures" Width="1.5" PointX="7.5" PointY="23.625" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.PictureUrls" Width="1.5" PointX="12.75" PointY="24.25" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_Pictures_To_Users_Created" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_Pictures_To_Users_Deleted" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_PictureResolutions_To_Picture" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_PictureResolutions_To_Urls" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_AspNetUsers_To_Pictures" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_SitePermissions_Users_To_Permissions" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.HotelPermissions" Width="1.5" PointX="3" PointY="4.375" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_HotelPermissions_Hotel_To_Permissions" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_HotelPermissions_Items_To_Permissions" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_HotelPermissions_OtherReservations_To_Permissions" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_HotelPermissions_PersonalReservations_To_Permissions" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_HotelPermissions_Users_To_Permissions" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_HotelUsers_To_Permissions" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.HotelMiscellaneousTable" Width="1.5" PointX="12.375" PointY="9.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.MiscellaneousHtmlTable" Width="1.5" PointX="18.375" PointY="0.875" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.TermsAndConditions" Width="1.5" PointX="20.625" PointY="1.125" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_TermsAndConditions_To_Miscellaneous" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.VenueItemWithQuantity" Width="1.5" PointX="18.375" PointY="4.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.VenueItemQuantity" Width="1.5" PointX="10.375" PointY="28" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_VenueItemQuantity_To_VenueItems" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.ReserveItems" Width="1.5" PointX="13.375" PointY="1.625" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ReserveItems_To_Items" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.TransactionPaymentDetails" Width="1.5" PointX="18.625" PointY="17.875" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.TransactionStripeDetails" Width="1.5" PointX="16.375" PointY="17.875" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ReservationTransaction_ToTable" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_TransactionPaymentDetails_ToTable" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.TransactionStatus" Width="1.5" PointX="18.375" PointY="8.875" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ReservationTransaction_To_Status" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.ReservationGroup" Width="1.5" PointX="7.5" PointY="10.25" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.ReservationGroupStatus" Width="1.5" PointX="3.5" PointY="21" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ReservationGroup_To_Users" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ReservationGroup_To_Hotels" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ReservationGroup_ToTable" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_ReserveItems_To_Reservations" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_TransactionsForReservations_To_Reservations" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.InboxMessages" Width="1.5" PointX="20.625" PointY="8.75" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.PrivacyPolicy" Width="1.5" PointX="21.375" PointY="3.875" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_InboxMessages_To_Users" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_InboxMessages_To_Miscellaneous" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_PrivacyPolicy_To_Miscellaneous" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_InboxMessages_ToTable" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Icons" Width="1.5" PointX="9.75" PointY="31.25" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_Icons_ToTable" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_VenueItems_ToTable" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_Hotels_ToTable" />
+        <EntityTypeShape EntityType="PoolReservation.Database.Entity.Venues" Width="1.5" PointX="23.625" PointY="8.75" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_Calendar_To_Venue" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_Venues_To_Hotel" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_Venues_ToTable_1" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_VenueItems_To_Venue" />
+        <AssociationConnector Association="PoolReservation.Database.Entity.FK_Venues_ToTable" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

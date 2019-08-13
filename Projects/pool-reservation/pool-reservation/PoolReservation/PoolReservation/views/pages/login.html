@@ -1,0 +1,51 @@
+<div ng-controller="LoginController">
+    <div class="login-overlay">
+        <div class="logo">
+            Just <br> <span class="smaller">Mosey</span>
+        </div>
+        <div class="form-container shadow">
+            <div class="icon">
+                <i class="mdi mdi-account-circle"></i>
+                <div class="header">
+                    Login
+                </div>
+            </div>
+            <div class="inputs">
+                <form ng-submit="LoginUser()" style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="user.mail" type="email" placeholder="email">
+                        </md-input-container>
+                    </div>
+                </form>
+                <form ng-submit="LoginUser()" style="display: flex; justify-content: center;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="user.password" type="password" placeholder="password">
+                        </md-input-container>
+                    </div>
+                </form>
+                <div class="buttons">
+                    <md-checkbox ng-model="user.rememberme" aria-label="Checkbox 1">
+                        Remember Me
+                    </md-checkbox>
+                    <span class="signup">
+                        <a ui-sref="signup">Sign up here</a> |
+                        <a ui-sref="sendforgotpassword">Forgot password</a>
+                    </span>
+                    <div class="link">
+                        <div class="link" style="padding-bottom:0;">
+                            <md-button ng-click="LoginUser()" class="md-raised primary"> Login </md-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="login-footer">
+            <div class="left-section">
+                &copy; JustMosey
+            </div>
+        </footer>
+    </div>
+
+</div>

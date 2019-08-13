@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "styles/mainstyles.css",
+    "inputFile": "styles/mainstyles.scss"
+  },
+  {
+    "outputFile": "styles/app-base.css",
+    "inputFile": "styles/app-base.scss"
+  },
+  {
+    "outputFile": "styles/app-blue.css",
+    "inputFile": "styles/app-blue.scss"
+  }
+]

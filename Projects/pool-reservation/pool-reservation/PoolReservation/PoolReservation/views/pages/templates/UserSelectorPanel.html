@@ -1,0 +1,63 @@
+﻿
+<div style="width:600px; height: 425px;" class="panel panel-default">
+    <md-button ng-click="CloseWidget()" class="md-fab md-mini md-primary pull-right" aria-label="Exit current widget">
+        <i class="mdi mdi-close"></i>
+    </md-button>
+    <div class="panel-heading">
+        Select a user:
+    </div>
+    <div style="height:90%; width:100%; overflow-y:auto;" class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <form ng-submit="SearchUsers()">
+                    <span class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                        <md-input-container>
+                            <input ng-model="query" type="text" placeholder="id or email...">
+                        </md-input-container>
+                    </span>
+                </form>
+            </div>
+            <div class="col-md-3">
+                <span class="link">
+                    <span class="link" style="padding-bottom:0;">
+                        <md-button ng-click="SearchUsers()" class="md-raised primary">Search</md-button>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div style="overflow-y: auto;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in UsersForList | orderBy:'-Id' track by user.Id">
+
+                        <td>
+                            {{user.Id}}
+                        </td>
+                        <td>
+                            {{user.Email}}
+                        </td>
+                        <td>
+                            <a ng-click="ChooseUser(user)">Select</a>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        
+    </div>
+</div>
+

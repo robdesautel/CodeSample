@@ -1,0 +1,100 @@
+﻿<div class="panel-heading">
+    <h3 ng-show="theOptions.HotelId">Manage Reservations in {{theOptions.HotelName || "Hotel"}}</h3>
+    <h3 ng-show="theOptions.UserId">Manage Reservations for User</h3>
+    <h3 ng-show="!theOptions.UserId && !theOptions.HotelId">Manage Reservations</h3>
+</div>
+<div class="panel-body">
+    <form ng-submit="SearchReservations()">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                    <md-input-container>
+                        <input ng-model="reservationSearchString" type="text" placeholder="Search reservations...">
+                    </md-input-container>
+                </span>
+            </div>
+            <div class="col-md-4">
+                <span class="link" style="padding-bottom:0;">
+                    <md-select ng-model="SearchMode" class="md-no-underline">
+                        <md-option value="UserId">User Id</md-option>
+                        <md-option value="UserEmail">User Email</md-option>
+                        <md-option value="HotelId">Hotel Id</md-option>
+                        <md-option value="ReservationId">Reservation Id</md-option>
+                    </md-select>
+                </span>
+            </div>
+            <div class="col-md-2">
+                <span class="link" style="padding-bottom:0;">
+                    <md-button ng-click="SearchReservations()" class="md-raised primary">Search</md-button>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                Start Date: <md-datepicker ng-model="StartDate" md-placeholder="Enter start date"></md-datepicker>
+            </div>
+            <div class="col-md-6">
+                End Date: <md-datepicker ng-model="EndDate" md-placeholder="Enter end date"></md-datepicker>
+            </div>
+        </div>
+       
+        <span class="link pull-right">
+            
+            
+        </span>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    User
+                </th>
+                <th>
+                    Hotel
+                </th>
+                <th>
+                    Status 
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    End Date
+                </th>
+                <th>
+                    Details
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="reservation in ReservationsForList track by reservation.Id">
+                <td>
+                    {{reservation.Id}}
+                </td>
+                <td>
+                    {{reservation.UsersEmail}}
+                </td>
+                <td>
+                    {{reservation.HotelName}}
+                </td>
+                <td>
+                    {{reservation.Status.Name}}
+                </td>
+                <td>
+                    {{reservation.StartDate | poolReserveDate : 'M/d/yy'}}
+                </td>
+                <td>
+                    {{reservation.EndDate | poolReserveDate : 'M/d/yy'}}
+                </td>
+                <td>
+                    <a ng-click="ShowReservationDetails(reservation)">Details</a>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <h4 ng-show="ReservationsForList == null || ReservationsForList.length == 0">No reservations...</h4>
+</div>

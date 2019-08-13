@@ -1,0 +1,48 @@
+﻿<div class="panel-heading">
+    <h3>Manage Blackouts in {{theOptions.VenueName || "Venue"}} <span class="pull-right"><button ng-click="AddBlackout()" class="btn btn-primary">Add Blackout</button></span></h3>
+    
+</div>
+<div class="panel-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    End Date
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="blackout in BlackoutsForList track by blackout.Id">
+                <td>
+                    {{blackout.Id}}
+                </td>
+                <td>
+                    {{blackout.StartDate | poolReserveDate : 'MM/dd/yyyy'}}
+                </td>
+                <td>
+                    {{blackout.EndDate | poolReserveDate : 'MM/dd/yyyy'}}
+                </td>
+                <td>
+                    <a ng-click="EditBlackout(blackout)">Edit</a>
+                </td>
+                <td>
+                    <a ng-click="DeleteBlackout(blackout)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <h4 ng-show="BlackoutsForList == null || BlackoutsForList.length == 0">No blackouts...</h4>
+</div>

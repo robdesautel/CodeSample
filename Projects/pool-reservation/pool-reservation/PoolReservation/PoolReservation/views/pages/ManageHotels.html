@@ -1,0 +1,27 @@
+﻿<div ng-controller="ManageHotelsController">
+    <div class="row">
+        <div class="col-md-12">
+            <md-button ng-show="CurrentSitePermissions.Hotel.Add" class="md-raised md-primary" ng-click="LoadCreateHotelWidget()">Create Hotel</md-button>
+            <md-button ng-show="CurrentSitePermissions.Icon.Add || CurrentSitePermissions.Icon.Edit || CurrentSitePermissions.Icon.Delete" class="md-raised md-primary" ng-click="LoadManageIcons()">Manage Icons</md-button>
+            <md-button ng-show="CurrentSitePermissions.OtherReservations.Add || CurrentSitePermissions.OtherReservations.Edit || CurrentSitePermissions.OtherReservations.Delete" class="md-raised md-primary">Create Reservation</md-button>
+            <md-button ng-show="CurrentSitePermissions.OtherReservations.View" class="md-raised md-primary" ng-click="LoadManageReservations()">Reservation Search</md-button>
+            <md-button ng-show="CurrentSitePermissions.Users.Add || CurrentSitePermissions.Users.Edit || CurrentSitePermissions.Users.Delete" class="md-raised md-primary">User Management</md-button>
+            <md-button ng-click="ChangeFullScreen()" class="md-raised md-warn"><span ng-hide="IsFullScreen">Fullscreen</span><span ng-show="IsFullScreen">Exit Fullscreen</span></md-button>
+        </div>
+        <hr />
+        <div ng-repeat="widget in Widgets track by widget.trackById">
+            <div ng-show="IsFullScreen == false || $last" ng-class="IsFullScreen ? 'col-md-12':'col-md-6'">
+                <div style="overflow-y: auto;" ng-style="IsFullScreen ? {'height':'100%'} : {'height':'425px'}" class="panel panel-default">
+                    <md-button ng-show="!$first && IsFullScreen" ng-click="CloseWidget(widget, $index)" class="md-fab md-mini" aria-label="Back one widget">
+                        <i class="mdi mdi-keyboard-backspace"></i>
+                    </md-button>
+                    <md-button ng-hide="$first || IsFullScreen" ng-click="CloseWidget(widget, $index)" class="md-fab md-mini md-primary pull-right" aria-label="Exit current widget">
+                        <i class="mdi mdi-close"></i>
+                    </md-button>
+                    <div create-widget="widget">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

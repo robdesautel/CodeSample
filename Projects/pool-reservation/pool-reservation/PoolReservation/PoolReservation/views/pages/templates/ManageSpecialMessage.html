@@ -1,0 +1,24 @@
+﻿<div class="demo-grid-ruler mdl-grid" style="height: 700px; width: 750px;">
+    <div class="mdl-cell mdl-cell--12-col shadow" style="background: white; text-align: center;">
+        <div style="display: flex; flex-direction: column; padding-top: 10px; padding-left: 10px;">
+            <div style="text-align: left;">
+                <label>Name</label><input type="text" placeholder="Message title" ng-model="message.title"/>
+            </div>
+            <div style="display:flex; flex-direction:row;">
+                <div style="display: flex; flex-direction:column;">
+                    <p>HTML</p>
+                    <textarea ng-change="UpdateDaPage()" ng-model="HtmlData" rows="4" cols="50" placeholder="Message body"></textarea>
+                </div>
+                <div style="display: flex; flex-direction:column;">
+                    <p style="text-align:left;">Preview</p>
+                    <div id="readonly" ng-bind-html="safeHtmlData"></div>
+                </div>
+            </div>
+        </div>
+        <md-button class="md-raised md-warn" ng-click="CloseDaWinnow()"> Cancel </md-button>
+        <md-button class="md-raised green"ng-click="Submit()">  Submit </md-button>
+
+    </div>
+</div>
+
+

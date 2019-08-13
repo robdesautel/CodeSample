@@ -1,0 +1,36 @@
+﻿<div class="panel-heading">
+    <h3>
+        Manage Icons <span class="pull-right">
+            <label class="md-button md-raised md-primary">
+                <input style="display:none;" type="file" single-file-upload on-change="ImageChanged">
+                Add Icon
+            </label>
+        </span>
+    </h3>
+</div>
+<div class="panel-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Image
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="icon in IconsForList | orderBy:'-Id' track by icon.Id">
+                <td>
+                    {{icon.Id}}
+                </td>
+                <td>
+                    <img ng-if="icon.Picture.Resolutions[0]" ng-src="{{icon.Picture.Resolutions[0].BlobUrl}}" width="50" height="50" />
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <h4 ng-show="IconsForList == null || IconsForList.length == 0">No icons...</h4>
+</div>

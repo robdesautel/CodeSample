@@ -1,0 +1,55 @@
+﻿<div class="panel-heading">
+    <h3 ng-show="IsAdd">Add Item to {{theOptions.VenueName || "Venue"}}</h3>
+    <h3 ng-hide="IsAdd">Manage Item in {{theOptions.VenueName || "Venue"}}</h3>
+</div>
+<div class="panel-body">
+    <div class="form-horizontal">
+        <div ng-hide="IsAdd" class="form-group">
+            <label class="control-label col-sm-2">Id:</label>
+            <div class="col-sm-10">
+                {{CurrentItem.Id}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-change="Invalidate()" ng-model="CurrentItem.Name" maxlength="30" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Is Hidden:</label>
+            <div class="col-sm-10">
+                <md-checkbox ng-model="CurrentItem.IsHidden" ng-change="Invalidate()" aria-label="Item Is Hidden">
+                </md-checkbox>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Type:</label>
+            <div class="col-sm-10">
+                <select ng-show="IsAdd" class="form-control" ng-options="item.Name for item in ItemTypeList track by item.Id"
+                        ng-model="CurrentItem.Type" ng-change="Invalidate()"></select> <span ng-hide="IsAdd">{{CurrentItem.Type.Name}}</span><br />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Price:</label>
+            <div class="col-sm-10">
+                <span ng-show="IsAdd || theOptions.SitePermissions.Price.Edit"><input type="text" class="form-control" ng-change="Invalidate()" ng-model="CurrentItem.Price" /> Value - </span>{{CurrentItem.Price | currency:"$"}} 
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Icon:</label>
+            <div class="col-sm-10">
+                <span ng-show="CurrentItem.Icon.Picture.Resolutions[0]"><img ng-if="CurrentItem.Icon.Picture.Resolutions[0]" ng-src="{{CurrentItem.Icon.Picture.Resolutions[0].BlobUrl}}" width="50" height="50" /></span><span><a ng-click="ChooseIcon()">Choose Icon</a></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Quantity:</label>
+            <div class="col-sm-10">
+                <span ng-show="IsAdd">Quantity: <input type="number" min="0" class="form-control" ng-model="CurrentItem.NormalQuantity" ng-change="Invalidate()" /><br /></span>
+                <span ng-hide="IsAdd">Quantity: <a ng-click="ManageQuantities()">Manage</a></span>
+            </div>
+        </div>
+    </div>    
+    <span class="pull-right" ng-show="IsAdd"><button ng-click="AddItem()" ng-show="IsModified" class="btn btn-success">Save Changes</button></span>
+    <span class="pull-right" ng-hide="IsAdd"><button ng-click="DeleteItem()" class="btn btn-danger">Delete</button><button ng-click="CancelChanges()" ng-show="IsModified" class="btn btn-primary">Cancel Changes</button><button ng-click="EditItem()" ng-show="IsModified" class="btn btn-success">Save Changes</button></span>
+</div>
